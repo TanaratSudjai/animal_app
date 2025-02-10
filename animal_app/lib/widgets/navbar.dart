@@ -9,7 +9,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text("Animal App"),
+      title: Text("กระต่ายโดนหมากิน"),
       leading: IconButton(
         icon: Icon(Icons.menu),
         onPressed: () {

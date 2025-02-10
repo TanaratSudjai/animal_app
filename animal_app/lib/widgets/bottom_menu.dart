@@ -22,8 +22,16 @@ class BottomMenu extends StatelessWidget {
         switch (index) {
           case 0:
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Home clicked!')),
+              SnackBar(
+                content: Text('กำลังไปที่หน้า รายการบ้านของกระต่าย...'),
+                duration: Duration(
+                    seconds: 2), // ตั้งเวลาให้แสดง SnackBar สัก 2 วินาที
+              ),
             );
+            Future.delayed(Duration(seconds: 2), () {
+              // ignore: use_build_context_synchronously
+              Navigator.pushNamed(context, '/home_rabbit'); // ไปยังหน้า Me
+            });
             break;
           case 1:
             ScaffoldMessenger.of(context).showSnackBar(
