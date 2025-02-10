@@ -14,17 +14,21 @@ class AboutPage extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 186, 214, 236)),
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage('assets/rabbit.png'),
+                    radius: 40, // กำหนดขนาดของวงกลม
+                    backgroundImage:
+                        AssetImage('assets/rabbit.jpg'), // ใช้รูปจาก assets
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Menu',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                    'กระต่ายโง่',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 24),
                   ),
                 ],
               ),
@@ -32,7 +36,7 @@ class AboutPage extends StatelessWidget {
             ListTile(
               title: Text('Home'),
               onTap: () {
-                Navigator.pushReplacementNamed(context, '/');
+                Navigator.pushReplacementNamed(context, '/home');
               },
             ),
             ListTile(
@@ -51,11 +55,64 @@ class AboutPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Text(
-          "This is the About Page",
-          style: TextStyle(fontSize: 24),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "เกี่ยวกับร้านกระต่ายของเรา",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.brown, // ใช้สีที่ดูอบอุ่น
+                  fontFamily: 'Arial', // ฟอนต์ที่เรียบง่ายและดูดี
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "ร้านกระต่ายของเรา ตั้งอยู่ที่",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black87,
+                  fontFamily: 'Arial',
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 10),
+              Text(
+                "123/45 ถนนมิตรภาพ แขวงศรีนครินทร์ กรุงเทพฯ",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors
+                      .blueAccent, // ใช้สีฟ้าเพื่อให้ดูเป็นมิตรและเชื่อมโยงกับธุรกิจ
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Arial',
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                decoration: BoxDecoration(
+                  color: Colors.orange, // สีส้มที่สดใส
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Text(
+                  "มาติดต่อเราตอนนี้!",
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
+
       bottomNavigationBar: BottomMenu(), // ใช้ Bottom Navigation Bar
     );
   }
