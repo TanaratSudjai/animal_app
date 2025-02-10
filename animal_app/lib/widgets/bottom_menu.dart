@@ -11,11 +11,15 @@ class BottomMenu extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite),
-          label: 'Heart',
+          label: 'Like',
         ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.thumb_up_alt),
+        //   label: 'Like',
+        // ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
-          label: 'Settings',
+          label: 'setting',
         ),
       ],
       onTap: (index) {
@@ -35,14 +39,19 @@ class BottomMenu extends StatelessWidget {
             break;
           case 1:
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Heart clicked!')),
+              SnackBar(content: Text('Like clicked!')),
             );
             break;
           case 2:
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Settings clicked!')),
+              SnackBar(content: Text('Like clicked!')),
             );
             break;
+          // case 3:
+          //   ScaffoldMessenger.of(context).showSnackBar(
+          //     SnackBar(content: Text('Settings clicked!')),
+          //   );
+          //   break;
         }
       },
     );
